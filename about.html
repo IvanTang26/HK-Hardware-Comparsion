@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SnowFox</title>
+    
+    <style>
+        /* Add some basic styling */
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .container { width: 80%; margin: auto; overflow: hidden; }
+        header { background: #333; color: white; padding-top: 30px; min-height: 70px; border-bottom: #bbb 1px solid; }
+        header a { color: #fff; text-decoration: none; text-transform: uppercase; font-size: 16px; }
+        nav { float: right; }
+        nav ul { list-style: none; }
+        nav ul li { display: inline; margin-right: 20px; }
+        .button { height: 50px; background: #e8491d; color: white; border: none; padding-left: 20px; padding-right: 20px; }
+    </style>
+</head>
+<link rel="stylesheet" href="styles.css">
+<script>
+    // Make an AJAX request to your Python back-end to fetch data
+    fetch('/api/data')
+      .then(response => response.json())
+      .then(data => {
+        // Use the fetched data in your JavaScript code
+        console.log(data);
+        // You can manipulate and display the data on your website
+      });
+</script>
+  
+<body>
+    <header>
+        
+        <div class="container">
+            <h1>SnowFox</h1>
+               
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="https://chat.openai.com/g/g-QRuNjYZ7G-computer-hardware-assistant" class="noir Recommendations">Recommendations</a></li>
+
+                </ul>
+            </nav>
+            
+        </div>
+        
+
+    </header>
+    
+
+    <div class="container">
+        <section id="showcase">
+            <h1>Welcome to Our Startup</h1>
+            <p>Revolutionizing the way you compare computer hardware prices in Hong Kong.</p>
+        </section>
+
+        <section id="Search">
+            <h2>Hardware Components</h2>
+            <form action="/search" method="get" class="search-bar">
+                <input type="text" name="query" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>        
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are a team of computer science enthusiasts dedicated to providing the best price comparison for computer hardware in Hong Kong.</p>
+            
+            <p>Our platform offers real-time price comparisons, expert reviews, and user ratings to help you make the best purchasing decisions.</p>
+        </section>
+
+
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" name="name" placeholder="Your Name">
+                <input type="email" name="email" placeholder="Your Email">
+                <textarea name="message" placeholder="Your Message"></textarea>
+                <button type="submit" class="button">Submit</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 SnowFox</p>
+    </footer>
+</body>
+</html>
